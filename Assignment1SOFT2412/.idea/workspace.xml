@@ -5,24 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f0738d2-48dc-48da-9ed1-0d245440f611" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/classes/java/main/Assignment1SOFT2412/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/classes/java/main/Assignment1SOFT2412/Admin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/classes/java/main/Assignment1SOFT2412/AdminDashboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/classes/java/main/Assignment1SOFT2412/AdminDashboard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4.2/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4.2/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/classes/java/main/Assignment1SOFT2412/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/classes/java/main/Assignment1SOFT2412/App.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/classes/java/main/Assignment1SOFT2412/Ask.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/classes/java/main/Assignment1SOFT2412/Ask.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/classes/java/main/Assignment1SOFT2412/CocaCola.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/classes/java/main/Assignment1SOFT2412/CocaCola.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/classes/java/main/Assignment1SOFT2412/IceTea.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/classes/java/main/Assignment1SOFT2412/IceTea.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/classes/java/main/Assignment1SOFT2412/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/classes/java/main/Assignment1SOFT2412/Item.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/classes/java/main/Assignment1SOFT2412/LoginSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/classes/java/main/Assignment1SOFT2412/LoginSystem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/classes/java/main/Assignment1SOFT2412/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/classes/java/main/Assignment1SOFT2412/Menu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/classes/java/main/Assignment1SOFT2412/People.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/classes/java/main/Assignment1SOFT2412/People.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/classes/java/main/Assignment1SOFT2412/Sprite.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/classes/java/main/Assignment1SOFT2412/Sprite.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/Assignment1SOFT2412/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Assignment1SOFT2412/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/Assignment1SOFT2412/Ask.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Assignment1SOFT2412/Ask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/Assignment1SOFT2412/LoginSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Assignment1SOFT2412/LoginSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/Assignment1SOFT2412/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Assignment1SOFT2412/Menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/Assignment1SOFT2412/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Assignment1SOFT2412/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/Assignment1SOFT2412/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/Assignment1SOFT2412/AppTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

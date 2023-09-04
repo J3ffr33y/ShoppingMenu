@@ -46,13 +46,16 @@ public class App {
                     int admin_select = ask.menuShow_or_dashboard();
                     if(admin_select == 1){
 //                    need a AdminDashboard show()
-                    }else if(admin_select == 2) {
+                    } else if (admin_select == 2) {
                         Original_menu.show();
                         Order order = new Order();
                         order.selectItemsFromMenu(Original_menu);
-                    }else{
-                        // need to add a return operation
+                    } else if (admin_select == 3) {
                         System.out.println("Returning to the main menu.");
+                        inloop = true;
+                    } else {
+                        // need to add a return operation
+                        System.out.println("Invalid input!");
                         inloop = true;
                     }
                 }
