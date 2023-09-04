@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f0738d2-48dc-48da-9ed1-0d245440f611" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4.2/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4.2/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/classes/java/main/Assignment1SOFT2412/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/classes/java/main/Assignment1SOFT2412/App.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/Assignment1SOFT2412/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Assignment1SOFT2412/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/Assignment1SOFT2412/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Assignment1SOFT2412/Order.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

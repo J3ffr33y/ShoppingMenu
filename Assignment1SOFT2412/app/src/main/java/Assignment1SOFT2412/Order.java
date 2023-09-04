@@ -36,6 +36,7 @@ public class Order {
             //cancel the order
 
             System.out.println("Your order has been cancelled.");
+            System.exit(0);
         }
 
         // checkout
