@@ -35,27 +35,45 @@ public class App {
     }
     public void Process(){
 
-        int user_choice = loginSystem.process();
-        if(user_choice==1){
-            boolean adminPass = loginSystem.LogIn();
-            if(adminPass){
-                int admin_select = ask.menuShow_or_dashboard();
-                if(admin_select == 1){
+        boolean inloop = true;
+
+        while(inloop){
+            inloop = false;
+            int user_choice = loginSystem.process();
+            if(user_choice==1){
+                boolean adminPass = loginSystem.LogIn();
+                if(adminPass){
+                    int admin_select = ask.menuShow_or_dashboard();
+                    if(admin_select == 1){
 //                    need a AdminDashboard show()
-                }else if(admin_select == 2){
-                    Original_menu.show();
-                }else{
-                    // need to add a return operation
+                    }else if(admin_select == 2) {
+                        Original_menu.show();
+                        Order order = new Order();
+                        order.selectItemsFromMenu(Original_menu);
+                    }else{
+                        // need to add a return operation
+                        System.out.println("Returning to the main menu.");
+                        inloop = true;
+                    }
                 }
+            } else if (user_choice == 2) {
+                loginSystem.Registration();
+                Original_menu.show();
+                Order order = new Order();
+                order.selectItemsFromMenu(Original_menu);
+            } else if (user_choice == 3) {
+                this.Original_menu.show();
+                Order order = new Order();
+                order.selectItemsFromMenu(Original_menu);
+            } else if (user_choice == 4) {
+                System.out.println("Exiting the application. Thank you for using!");
+            } else {
+                // need to add a return operation
+                System.out.println("Invalid option. Please try again! ");
+                inloop = true;
             }
-        } else if (user_choice == 2) {
-            loginSystem.Registration();
-            Original_menu.show();
-        } else if (user_choice == 3) {
-            this.Original_menu.show();
-        }else{
-            // need to add a return operation
         }
+
     }
     public static void main(String[] args) {
         App app = new App();

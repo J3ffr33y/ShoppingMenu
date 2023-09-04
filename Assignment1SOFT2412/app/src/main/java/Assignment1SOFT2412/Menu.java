@@ -10,7 +10,9 @@ public class Menu {
         this.itemList = itemList;
     }
 
-    public List<Item> getItemList(){return this.itemList;}
+    public List<Item> getItemList(){
+        return this.itemList;
+    }
     public void setItemList(){}
 
     public void addItem(Item item){

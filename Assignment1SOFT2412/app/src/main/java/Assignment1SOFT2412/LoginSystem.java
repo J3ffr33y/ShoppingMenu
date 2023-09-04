@@ -2,6 +2,7 @@ package Assignment1SOFT2412;
 
 import java.util.List;
 import java.util.Scanner;
+import java.util.InputMismatchException;
 
 public class LoginSystem {
     private List<Admin> adminList;
@@ -40,6 +41,7 @@ public class LoginSystem {
                 }
             }
             if(!result){
+                int select = 0;
                 System.out.println("Sorry your Account is not in System!");
             }
         }
@@ -57,17 +59,26 @@ public class LoginSystem {
         new_admin.setPassword(new_Password);
     }
 
-    public int process(){
+    public int process() {
         boolean check = true;
         int result = 0;
-        while (check){
-            Scanner scan = new Scanner(System.in);
-            System.out.println("1. Log in");
-            System.out.println("2. Registration ");
-            System.out.println("3. User login free");
-            result = scan.nextInt();
-            if(result == 1 || result == 2 || result == 3){
-                check = false;
+        Scanner scan = new Scanner(System.in);
+        while (check) {
+            try {
+                System.out.println("1. Log in");
+                System.out.println("2. Registration ");
+                System.out.println("3. User login free");
+                System.out.println("4. Exit");
+
+                result = scan.nextInt();
+                if (result == 1 || result == 2 || result == 3 || result == 4) {
+                    check = false;
+                } else {
+                    System.out.println("Invalid input. Please enter a number between 1 and 4.");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid input. Please enter a number.");
+                scan.next(); // Clear the invalid input
             }
         }
         return result;
