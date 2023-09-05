@@ -2,7 +2,7 @@ package Assignment1SOFT2412;
 
 import java.util.List;
 import java.util.Scanner;
-import java.util.InputMismatchException;
+import java.io.*;
 
 public class LoginSystem {
     private List<Admin> adminList;
@@ -27,21 +27,27 @@ public class LoginSystem {
             String enter_account = scan.next();
             System.out.print("Please enter Password: ");
             String enter_password = scan.next();
-            int size = adminList.size();
-            for (int i = 0; i < size; i++) {
-                if(enter_account.equals(adminList.get(i).getAccount())){
-                    String true_password = adminList.get(i).getPassword();
-                    if(true_password.equals(enter_password)){
+            try {
+                FileInputStream fstream = new FileInputStream("src/main/java/Assignment1SOFT2412/Password.csv");
+                DataInputStream in = new DataInputStream(fstream);
+                BufferedReader br = new BufferedReader(new InputStreamReader(in));
+                String temp;
+                while ((temp = br.readLine()) != null) {
+                    String[] splitted = temp.split(",");
+                    if (enter_account.equals(splitted[0])&&enter_password.equals(splitted[1])){
+                        System.out.println("Welcome "+splitted[2]+" !");
                         result = true;
                         break;
-                    }else{
-                        System.out.println("Password is wrong");
-                        System.out.println("Please enter again");
                     }
                 }
+                in.close();
+            } catch (Exception e) {
+
+                System.err.println(e);
             }
+
+
             if(!result){
-                int select = 0;
                 System.out.println("Sorry your Account is not in System!");
             }
         }
@@ -49,16 +55,23 @@ public class LoginSystem {
     }
     public void Registration(){
 //  The User function needs to be implemented.(Give all users a common account)
-        Admin new_admin = new Admin("admin4","123456");
         Scanner scan = new Scanner(System.in);
         System.out.print("Create an Account: ");
         String new_Account =scan.nextLine();
         System.out.print("Create an Password: ");
         String new_Password =scan.nextLine();
-        new_admin.setAccount(new_Account);
-        new_admin.setPassword(new_Password);
+        try {
+            FileWriter fw = new FileWriter("src/main/java/Assignment1SOFT2412/Password.csv",true);
+            BufferedWriter bw = new BufferedWriter(fw);
+            bw.newLine();
+            bw.write(new_Account+','+new_Password+','+'N');
+            bw.newLine();
+            bw.close();
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
     }
-
     public int process() {
         boolean check = true;
         int result = 0;
