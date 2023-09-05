@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Lab06-Yang-Lu-Group03-A1.iml" filepath="$PROJECT_DIR$/.idea/Lab06-Yang-Lu-Group03-A1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Assignment1SOFT2412.iml" filepath="$PROJECT_DIR$/.idea/modules/Assignment1SOFT2412.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Assignment1SOFT2412.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Assignment1SOFT2412.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Assignment1SOFT2412.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Assignment1SOFT2412.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Assignment1SOFT2412.app.test.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Assignment1SOFT2412.app.test.iml" />
     </modules>
   </component>
 </project>
