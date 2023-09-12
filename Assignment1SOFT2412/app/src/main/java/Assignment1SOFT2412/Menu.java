@@ -124,7 +124,6 @@ public class Menu {
     }
     public void show(){
         /* Alignment needs to be implemented */
-        updateItem();
         try {
             FileInputStream fstream = new FileInputStream("src/main/java/Assignment1SOFT2412/Menu.csv");
             DataInputStream in = new DataInputStream(fstream);
