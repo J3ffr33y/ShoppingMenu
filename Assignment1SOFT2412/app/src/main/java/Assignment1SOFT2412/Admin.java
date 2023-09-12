@@ -21,4 +21,5 @@ public class Admin extends People{
     public String getPassword(){
         return this.Password;
     }
+
 }

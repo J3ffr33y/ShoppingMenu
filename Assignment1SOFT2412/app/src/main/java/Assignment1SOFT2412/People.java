@@ -2,7 +2,7 @@ package Assignment1SOFT2412;
 
 import java.util.List;
 
-public abstract class People {
+public abstract class People{
     String name;
     List<Order> orderList;
     String Account;
@@ -25,14 +25,5 @@ public abstract class People {
         return orderList;
     }
     public String getName(){return this.name;}
-
-
-
-
-    public void additemToCart(Menu menu,Item item){
-
-    }
-
-
 
 }
