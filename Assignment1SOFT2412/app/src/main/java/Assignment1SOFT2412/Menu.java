@@ -24,21 +24,22 @@ public class Menu {
         Scanner console = new Scanner(System.in);
         System.out.print("Enter item name : ");
         String name = console.nextLine();
-        System.out.print("What to update?(P for price,D for description,B for both) :");
+        System.out.print("What to update?(P for price,D for description,B for both,R for remove) :");
         String ans = console.nextLine();
         String update = switch (ans) {
             case "P" -> "P";
             case "D" -> "D";
             case "B" -> "B";
+            case "R" -> "R";
             default -> "";
         };
-        String[] update_option = {"P","D","B"};
+        String[] update_option = {"P","D","B","R"};
         if(!containsAKeyword(update, update_option)){
             System.out.print("invalid option");
             return;
         }
 
-        System.out.print("Enter the value after update (if you selected B, seperate two updates by ,) :");
+        System.out.print("Enter the value after update (if you selected B, seperate two updates by , if you selected R simply press space) :");
         String va = console.nextLine();
         if(update.equals("P")){
             try
@@ -88,6 +89,9 @@ public class Menu {
                     }
                     else if (update.equals("D")){
                         splitted[2] = va;
+                    }
+                    else if (update.equals("R")){
+                        continue;
                     }
                     line = name+','+splitted[1]+','+splitted[2];
                 }
