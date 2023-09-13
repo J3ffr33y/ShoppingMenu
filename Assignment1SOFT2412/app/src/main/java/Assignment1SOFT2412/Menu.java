@@ -26,13 +26,26 @@ public class Menu {
         String name = console.nextLine();
         System.out.print("What to update?(P for price,D for description,B for both,R for remove) :");
         String ans = console.nextLine();
-        String update = switch (ans) {
-            case "P" -> "P";
-            case "D" -> "D";
-            case "B" -> "B";
-            case "R" -> "R";
-            default -> "";
-        };
+        String update;
+
+        switch (ans) {
+            case "P":
+                update = "P";
+                break;
+            case "D":
+                update = "D";
+                break;
+            case "B":
+                update = "B";
+                break;
+            case "R":
+                update = "R";
+                break;
+            default:
+                update = "";
+                break;
+        }
+
         String[] update_option = {"P","D","B","R"};
         if(!containsAKeyword(update, update_option)){
             System.out.print("invalid option");
@@ -66,12 +79,12 @@ public class Menu {
 
 
         try {
-            File originalFile = new File("src/main/java/Assignment1SOFT2412/Menu.csv");
+            File originalFile = new File("app/src/main/java/Assignment1SOFT2412/Menu.csv");
             BufferedReader br = new BufferedReader(new FileReader(originalFile));
 
             // Construct the new file that will later be renamed to the original
             // filename.
-            File tempFile = new File("src/main/java/Assignment1SOFT2412/Temp.csv");
+            File tempFile = new File("app/src/main/java/Assignment1SOFT2412/Temp.csv");
             PrintWriter pw = new PrintWriter(new FileWriter(tempFile));
 
             String line = null;
@@ -115,7 +128,7 @@ public class Menu {
 
     public void addItem(String name,String price,String desc){
         try {
-            FileWriter fw = new FileWriter("src/main/java/Assignment1SOFT2412/Menu.csv",true);
+            FileWriter fw = new FileWriter("app/src/main/java/Assignment1SOFT2412/Menu.csv",true);
             BufferedWriter bw = new BufferedWriter(fw);
             bw.newLine();
             bw.write(name+','+price+','+desc);
@@ -129,7 +142,7 @@ public class Menu {
     public void show(){
         /* Alignment needs to be implemented */
         try {
-            FileInputStream fstream = new FileInputStream("src/main/java/Assignment1SOFT2412/Menu.csv");
+            FileInputStream fstream = new FileInputStream("app/src/main/java/Assignment1SOFT2412/Menu.csv");
             DataInputStream in = new DataInputStream(fstream);
             BufferedReader br = new BufferedReader(new InputStreamReader(in));
             String temp;

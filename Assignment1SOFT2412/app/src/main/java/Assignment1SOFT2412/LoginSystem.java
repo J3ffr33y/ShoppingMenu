@@ -28,7 +28,7 @@ public class LoginSystem {
             System.out.print("Please enter Password: ");
             String enter_password = scan.next();
             try {
-                FileInputStream fstream = new FileInputStream("src/main/java/Assignment1SOFT2412/Password.csv");
+                FileInputStream fstream = new FileInputStream("app/src/main/java/Assignment1SOFT2412/Password.csv");
                 DataInputStream in = new DataInputStream(fstream);
                 BufferedReader br = new BufferedReader(new InputStreamReader(in));
                 String temp;
@@ -61,7 +61,7 @@ public class LoginSystem {
         System.out.print("Create an Password: ");
         String new_Password =scan.nextLine();
         try {
-            FileWriter fw = new FileWriter("src/main/java/Assignment1SOFT2412/Password.csv",true);
+            FileWriter fw = new FileWriter("app/src/main/java/Assignment1SOFT2412/Password.csv",true);
             BufferedWriter bw = new BufferedWriter(fw);
             bw.newLine();
             bw.write(new_Account+','+new_Password+','+'N');
@@ -81,13 +81,14 @@ public class LoginSystem {
                 System.out.println("1. Log in");
                 System.out.println("2. Registration ");
                 System.out.println("3. User login free");
-                System.out.println("4. Exit");
+                System.out.println("4. Check out");
+                System.out.println("5. Exit");
 
                 result = scan.nextInt();
                 if (result == 1 || result == 2 || result == 3 || result == 4) {
                     check = false;
                 } else {
-                    System.out.println("Invalid input. Please enter a number between 1 and 4.");
+                    System.out.println("Invalid input. Please enter a number between 1 and 5.");
                 }
             } catch (InputMismatchException e) {
                 System.out.println("Invalid input. Please enter a number.");
