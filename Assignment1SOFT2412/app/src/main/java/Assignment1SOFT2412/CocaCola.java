@@ -1,7 +1,7 @@
 package Assignment1SOFT2412;
 
 public class CocaCola extends Item {
-    private String name = "Coca Cola";
+    private String name = "CocaCola";
     private double price = 3.0;
     private String description = "A classic soda";
 

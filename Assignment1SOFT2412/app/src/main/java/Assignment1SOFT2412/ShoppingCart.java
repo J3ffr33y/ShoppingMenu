@@ -1,21 +1,22 @@
 package Assignment1SOFT2412;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.sql.SQLOutput;
+import java.util.*;
 
 public class ShoppingCart {
+    private List<OrderItem> orderItemList = new ArrayList<>();
 
-    private Map<Item, Integer> itemMap = new HashMap<>();
 
-    public void add(Item item,int number){
-        itemMap.put(item,number);
+    public void add(Item item, int number) {
+        String name = item.getName();
+        double price = item.getPrice()*number;
+        this.orderItemList.add(new OrderItem(name,number,price));
     }
-    public void show(){
-        for(Item key:itemMap.keySet()){
-            String name = key.getName();
-            int number = itemMap.get(key);
-            String str = String.format("%-15s%5s",name,number);
-            System.out.println(str);
-        }
+
+    public List<OrderItem> getOrderItemList() {
+        return orderItemList;
     }
 }

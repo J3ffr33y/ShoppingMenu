@@ -1,21 +1,63 @@
 package Assignment1SOFT2412;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Menu {
 
-        private List<Item> itemList = new ArrayList<Item>(){{
-        add(new CocaCola());
-        add(new IceTea());
-        add(new Sprite());
-    }};
+    private List<Item> itemList = new ArrayList<Item>();
+    private String path = "Assignment1SOFT2412/app/src/main/resources/Menu.txt";
+    public Menu(){
+        readTxt();
+    }
+    public void readTxt(){
+        try {
+            File filename = new File(path);
+            InputStreamReader reader = new InputStreamReader(
+                    new FileInputStream(filename));
+            BufferedReader br = new BufferedReader(reader);
+            String line = "";
+            line = br.readLine();
+            while (line != null) {
+                line = br.readLine();
+                if(line==null){
+                    break;
+                }else{
+                    String[] txtRead = line.split(",");
+                    Item item = new NewItem(txtRead[0],Double.parseDouble(txtRead[1]),txtRead[2]);
+                    itemList.add(item);
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    public void writeTxt(List<Item> iL){
+        try {
+            BufferedWriter out = new BufferedWriter(new FileWriter(path));
+            String first_line = "items name,price,description\n";
+            out.write(first_line);
+            for(Item i:iL){
+                String name = i.getName();
+                double price = i.getPrice();
+                String description = i.getDescription();
+                String str = String.format("%s,%s,%s",name,price,description);
+                str+="\r\n";
+                out.write(str);
+            }
+            out.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     public List<Item> getItemList(){return this.itemList;}
-    public void setItemList(){}
+
+
 
     public void show(){
-        /* Alignment needs to be implemented */
         int size = itemList.size();
         for (int i = 0; i < size; i++) {
             String item_name = itemList.get(i).getName();
@@ -37,6 +79,7 @@ public class Menu {
     }
     public void add(Item item){
         this.itemList.add(item);
+        writeTxt(this.itemList);
     }
     public void update(Item item){
         for(Item i : itemList){
@@ -45,6 +88,7 @@ public class Menu {
                 i.setDescription(item.getDescription());
             }
         }
+        writeTxt(this.itemList);
     }
     public void delete(Item item){
         for(Item i : itemList){
@@ -52,6 +96,6 @@ public class Menu {
                 itemList.remove(i);
             }
         }
+        writeTxt(this.itemList);
     }
-
 }

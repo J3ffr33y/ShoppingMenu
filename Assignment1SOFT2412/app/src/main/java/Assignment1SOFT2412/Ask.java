@@ -4,6 +4,9 @@ import java.util.Scanner;
 
 public class Ask {
     LoginSystem loginSystem = new LoginSystem();
+    String Temporary_name = "";
+    String Temporary_password = "";
+
 
     public int Initial_query(){
         boolean check = true;
@@ -28,6 +31,7 @@ public class Ask {
         Scanner scan = new Scanner(System.in);
         System.out.print("Please enter Account: ");
         String enter_account = scan.next();
+        Temporary_name = enter_account;
         for(Admin admin : loginSystem.getAdminList()){
             if(admin.getAccount().equals(enter_account)){
                 is_in_list = true;
@@ -40,6 +44,7 @@ public class Ask {
                 System.out.print("Please enter Password: ");
                 String enter_password = scan.next();
                 if(enter_password.equals(true_password)){
+                    Temporary_password = enter_password;
                     result = true;
                 }
             }
@@ -47,6 +52,10 @@ public class Ask {
             System.out.println("Sorry, your account is not on our list!");
         }
         return result;
+    }
+    public Admin login_ID(){
+        Admin a = new Admin(Temporary_name,Temporary_password);
+        return a;
     }
 
 
@@ -108,9 +117,8 @@ public class Ask {
             System.out.println("2. Update the items in Menu");
             System.out.println("3. Delete the items in Menu");
             System.out.println("4. Purchase items");
-            System.out.println("5. return last step");
             select = scan.nextInt();
-            if (select == 1||select == 2||select == 3||select == 4||select == 5){
+            if (select == 1||select == 2||select == 3||select == 4){
                 result = true;
             }
         }
@@ -121,7 +129,8 @@ public class Ask {
         System.out.print("Please enter your item's name: ");
         String name =scan.nextLine();
         System.out.print("Please enter your item's price: ");
-        double price =scan.nextDouble();
+        String enter_price = scan.nextLine();
+        double price = Double.parseDouble(enter_price);
         System.out.print("Please enter your item's description: ");
         String description =scan.nextLine();
         Item new_item = new NewItem(name,price,description);
@@ -139,6 +148,58 @@ public class Ask {
                 cart.add(menu.getItemList().get(i),number);
             }
         }
-        System.out.println("购买成功");
+    }
+    public int isPurchase(){
+        boolean result = false;
+        int select = 0;
+        while(!result){
+            Scanner scan = new Scanner(System.in);
+            System.out.println("Do you want to continue buying?");
+            System.out.println("1. Yes");
+            System.out.println("2. No");
+            select = scan.nextInt();
+            if (select == 1||select == 2){
+                result = true;
+            }
+        }
+        return select;
+    }
+
+    public int isDashboard(){
+        boolean result = false;
+        int select = 0;
+        while(!result){
+            Scanner scan = new Scanner(System.in);
+            System.out.println("Do you want to continue operating?");
+            System.out.println("1. Yes");
+            System.out.println("2. No");
+            select = scan.nextInt();
+            if (select == 1||select == 2){
+                result = true;
+            }
+        }
+        return select;
+    }
+
+    public int end(){
+        boolean result = false;
+        int select = 0;
+        while(!result){
+            Scanner scan = new Scanner(System.in);
+            System.out.println("Please select the options below:");
+            System.out.println("1. Check your all history Order");
+            System.out.println("2. End");
+            select = scan.nextInt();
+            if (select == 1||select == 2){
+                result = true;
+            }
+        }
+        return select;
+    }
+    public String ID(){
+        System.out.println("Please enter the ID of you want to check");
+        Scanner scann = new Scanner(System.in);
+        String id = scann.nextLine();
+        return id;
     }
 }
