@@ -1,0 +1,8 @@
+Items name,Number,Price
+Order ID:13095420-8c69-4921-92af-70da08cda478
+CocaCola,3,9.0
+Total price:9.0
+Items name,Number,Price
+Order ID:4e6608d7-19d3-4e0c-be25-b0e47bf8cc9f
+CocaCola,5,15.0
+Total price:15.0
