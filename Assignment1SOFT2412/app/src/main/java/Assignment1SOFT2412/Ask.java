@@ -202,4 +202,19 @@ public class Ask {
         String id = scann.nextLine();
         return id;
     }
+    public int send(){
+        boolean result = false;
+        int select = 0;
+        while(!result){
+            Scanner scan = new Scanner(System.in);
+            System.out.println("Please select the options below:");
+            System.out.println("1. Pick it up at the store");
+            System.out.println("2. Home delivery");
+            select = scan.nextInt();
+            if (select == 1||select == 2){
+                result = true;
+            }
+        }
+        return select;
+    }
 }

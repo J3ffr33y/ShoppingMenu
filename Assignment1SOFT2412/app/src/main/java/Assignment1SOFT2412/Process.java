@@ -115,11 +115,16 @@ public class Process {
                         orderList = new OrderList(current_user,order);
                         Control = 8;
                     }else{
+                        ask.send();
                         break;
                     }
                 }
             }
             if(Control == 8){
+                int send = ask.send();
+                Control = 9;
+            }
+            if(Control == 9){
                 int end = ask.end();
                 if(end == 1){
                     String orderId = ask.ID();
