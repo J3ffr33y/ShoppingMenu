@@ -3,12 +3,10 @@ package Assignment1SOFT2412;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.InputStream;
-import java.io.PrintStream;
+import java.io.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class AskTest {
 
@@ -59,6 +57,90 @@ public class AskTest {
 
         System.setIn(originalSystemIn);
     }
+    @Test
+    public void dashboard() {
+        final InputStream originalSystemIn = System.in;
+        ByteArrayInputStream in = new ByteArrayInputStream("1\n".getBytes());
+        System.setIn(in);
+
+        int result = ask.dashboard();
+        assertEquals(1, result);
+
+        System.setIn(originalSystemIn);
+    }
+    @Test
+    public void isDashboard() {
+        final InputStream originalSystemIn = System.in;
+        ByteArrayInputStream in = new ByteArrayInputStream("1\n".getBytes());
+        System.setIn(in);
+
+        int result = ask.isDashboard();
+        assertEquals(1, result);
+
+        System.setIn(originalSystemIn);
+    }
+    @Test
+    public void isPurchase() {
+        final InputStream originalSystemIn = System.in;
+        ByteArrayInputStream in = new ByteArrayInputStream("1\n".getBytes());
+        System.setIn(in);
+
+        int result = ask.isPurchase();
+        assertEquals(1, result);
+
+        System.setIn(originalSystemIn);
+    }
+
+    @Test
+    public void end() {
+        final InputStream originalSystemIn = System.in;
+        ByteArrayInputStream in = new ByteArrayInputStream("1\n".getBytes());
+        System.setIn(in);
+
+        int result = ask.end();
+        assertEquals(1, result);
+
+        System.setIn(originalSystemIn);
+    }
+    @Test
+    public void send() {
+        final InputStream originalSystemIn = System.in;
+        ByteArrayInputStream in = new ByteArrayInputStream("1\n".getBytes());
+        System.setIn(in);
+
+        int result = ask.send();
+        assertEquals(1, result);
+
+        System.setIn(originalSystemIn);
+    }
+    @Test
+    public void getNewItem() {
+
+        final InputStream originalSystemIn = System.in;
+        ByteArrayInputStream in = new ByteArrayInputStream("IP15PRO\n88.8\nhello\n".getBytes());
+        System.setIn(in);
+        Ask obj =new Ask();
+        Item newItem = obj.getNewItem();
+        assertEquals("IP15PRO", newItem.getName());
+        assertEquals(88.8, newItem.getPrice());
+        assertEquals("hello", newItem.getDescription());
+
+        System.setIn(originalSystemIn);
+
+    }
+
+    @Test
+    public void testID() {
+
+        final InputStream originalSystemIn = System.in;
+        ByteArrayInputStream in = new ByteArrayInputStream("testID\n".getBytes());
+        System.setIn(in);
+        Ask obj = new Ask();
+        String id = obj.ID();
+        assertEquals("testID", id);
+        System.setIn(originalSystemIn);
+    }
+
 
     @Test
     public void testRegistration_Admin() {
@@ -72,6 +154,7 @@ public class AskTest {
 
         System.setIn(originalSystemIn);
     }
+
     @Test
     public void testRegistration_User() {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
@@ -83,7 +166,6 @@ public class AskTest {
 
         System.setOut(System.out);
     }
-
     @Test
     public void testMenuShow_or_dashboard() {
         final InputStream originalSystemIn = System.in;
@@ -95,6 +177,7 @@ public class AskTest {
 
         System.setIn(originalSystemIn);
     }
+
     @Test
     public void testLogIn() {
         // Save the original System.in stream
@@ -109,7 +192,7 @@ public class AskTest {
             boolean loginResult = ask.LogIn();
 
             // Validate the result
-            assertEquals(true, loginResult);
+            assertTrue(loginResult);
         } finally {
             // Restore the original System.in stream
             System.setIn(originalSystemIn);
