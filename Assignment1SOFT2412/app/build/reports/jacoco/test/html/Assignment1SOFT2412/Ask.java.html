@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="zh"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Ask.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">app</a> &gt; <a href="index.source.html" class="el_package">Assignment1SOFT2412</a> &gt; <span class="el_source">Ask.java</span></div><h1>Ask.java</h1><pre class="source lang-java linenums">package Assignment1SOFT2412;
+
+import java.util.Scanner;
+
+<span class="fc" id="L5">public class Ask {</span>
+<span class="fc" id="L6">    LoginSystem loginSystem = new LoginSystem();</span>
+<span class="fc" id="L7">    String Temporary_name = &quot;&quot;;</span>
+<span class="fc" id="L8">    String Temporary_password = &quot;&quot;;</span>
+
+
+    public int Initial_query(){
+<span class="fc" id="L12">        boolean check = true;</span>
+<span class="fc" id="L13">        int result = 0;</span>
+<span class="fc bfc" id="L14" title="All 2 branches covered.">        while (check){</span>
+<span class="fc" id="L15">            Scanner scan = new Scanner(System.in);</span>
+<span class="fc" id="L16">            System.out.println(&quot;1. Log in&quot;);</span>
+<span class="fc" id="L17">            System.out.println(&quot;2. Registration &quot;);</span>
+<span class="fc" id="L18">            System.out.println(&quot;3. User login free&quot;);</span>
+<span class="fc" id="L19">            result = scan.nextInt();</span>
+<span class="pc bpc" id="L20" title="1 of 6 branches missed.">            if(result == 1 || result == 2 || result == 3){</span>
+<span class="fc" id="L21">                check = false;</span>
+            }
+<span class="fc" id="L23">        }</span>
+<span class="fc" id="L24">        return result;</span>
+    }
+
+    public boolean LogIn(){
+<span class="nc" id="L28">        boolean is_in_list = false;</span>
+<span class="nc" id="L29">        String true_password = &quot;&quot;;</span>
+<span class="nc" id="L30">        boolean result = false;</span>
+<span class="nc" id="L31">        Scanner scan = new Scanner(System.in);</span>
+<span class="nc" id="L32">        System.out.print(&quot;Please enter Account: &quot;);</span>
+<span class="nc" id="L33">        String enter_account = scan.next();</span>
+<span class="nc" id="L34">        Temporary_name = enter_account;</span>
+<span class="nc bnc" id="L35" title="All 2 branches missed.">        for(Admin admin : loginSystem.getAdminList()){</span>
+<span class="nc bnc" id="L36" title="All 2 branches missed.">            if(admin.getAccount().equals(enter_account)){</span>
+<span class="nc" id="L37">                is_in_list = true;</span>
+<span class="nc" id="L38">                true_password = admin.getPassword();</span>
+<span class="nc" id="L39">                break;</span>
+            }
+<span class="nc" id="L41">        }</span>
+<span class="nc bnc" id="L42" title="All 2 branches missed.">        if(is_in_list){</span>
+<span class="nc bnc" id="L43" title="All 2 branches missed.">            while (!result){</span>
+<span class="nc" id="L44">                System.out.print(&quot;Please enter Password: &quot;);</span>
+<span class="nc" id="L45">                String enter_password = scan.next();</span>
+<span class="nc bnc" id="L46" title="All 2 branches missed.">                if(enter_password.equals(true_password)){</span>
+<span class="nc" id="L47">                    Temporary_password = enter_password;</span>
+<span class="nc" id="L48">                    result = true;</span>
+                }
+<span class="nc" id="L50">            }</span>
+        }else{
+<span class="nc" id="L52">            System.out.println(&quot;Sorry, your account is not on our list!&quot;);</span>
+        }
+<span class="nc" id="L54">        return result;</span>
+    }
+    public Admin login_ID(){
+<span class="nc" id="L57">        Admin a = new Admin(Temporary_name,Temporary_password);</span>
+<span class="nc" id="L58">        return a;</span>
+    }
+
+
+    public int Registration1(){
+<span class="nc" id="L63">        boolean result = false;</span>
+<span class="nc" id="L64">        int select = 0;</span>
+<span class="nc bnc" id="L65" title="All 2 branches missed.">        while(!result){</span>
+<span class="nc" id="L66">            Scanner scan = new Scanner(System.in);</span>
+<span class="nc" id="L67">            System.out.println(&quot;Choose your identity: &quot;);</span>
+<span class="nc" id="L68">            System.out.println(&quot;1. Admin&quot;);</span>
+<span class="nc" id="L69">            System.out.println(&quot;2. User&quot;);</span>
+<span class="nc" id="L70">            System.out.println(&quot;3. return last step&quot;);</span>
+<span class="nc" id="L71">            select = scan.nextInt();</span>
+<span class="nc bnc" id="L72" title="All 6 branches missed.">            if (select == 1||select == 2 || select == 3 ){</span>
+<span class="nc" id="L73">                result = true;</span>
+            }
+<span class="nc" id="L75">        }</span>
+<span class="nc" id="L76">        return select;</span>
+    }
+    public Admin Registration_Admin(){
+<span class="nc" id="L79">        Scanner scan = new Scanner(System.in);</span>
+<span class="nc" id="L80">        System.out.print(&quot;Create an Account: &quot;);</span>
+<span class="nc" id="L81">        String new_Account =scan.nextLine();</span>
+<span class="nc" id="L82">        System.out.print(&quot;Create an Password: &quot;);</span>
+<span class="nc" id="L83">        String new_Password =scan.nextLine();</span>
+<span class="nc" id="L84">        Admin new_admin = new Admin(new_Account,new_Password);</span>
+<span class="nc" id="L85">        return  new_admin;</span>
+    }
+    public void Registration_User(){
+<span class="nc" id="L88">        User new_admin = new User(&quot;User&quot;,&quot;123456&quot;);</span>
+<span class="nc" id="L89">        System.out.println(&quot;Your Account is User&quot;);</span>
+<span class="nc" id="L90">        System.out.println(&quot;Your password is 123456&quot;);</span>
+<span class="nc" id="L91">    }</span>
+
+
+    public int menuShow_or_dashboard(){
+<span class="nc" id="L95">        boolean result = false;</span>
+<span class="nc" id="L96">        int select = 0;</span>
+<span class="nc bnc" id="L97" title="All 2 branches missed.">        while(!result){</span>
+<span class="nc" id="L98">            Scanner scan = new Scanner(System.in);</span>
+<span class="nc" id="L99">            System.out.println(&quot;Please select the options below: &quot;);</span>
+<span class="nc" id="L100">            System.out.println(&quot;1. enter the AdminDashboard&quot;);</span>
+<span class="nc" id="L101">            System.out.println(&quot;2. enter the Menu&quot;);</span>
+<span class="nc" id="L102">            System.out.println(&quot;3. return last step&quot;);</span>
+<span class="nc" id="L103">            select = scan.nextInt();</span>
+<span class="nc bnc" id="L104" title="All 6 branches missed.">            if (select == 1||select == 2||select == 3){</span>
+<span class="nc" id="L105">                result = true;</span>
+            }
+<span class="nc" id="L107">        }</span>
+<span class="nc" id="L108">        return select;</span>
+    }
+    public int dashboard(){
+<span class="nc" id="L111">        boolean result = false;</span>
+<span class="nc" id="L112">        int select = 0;</span>
+<span class="nc bnc" id="L113" title="All 2 branches missed.">        while(!result){</span>
+<span class="nc" id="L114">            Scanner scan = new Scanner(System.in);</span>
+<span class="nc" id="L115">            System.out.println(&quot;Please select the options below: &quot;);</span>
+<span class="nc" id="L116">            System.out.println(&quot;1. Add items to the Menu&quot;);</span>
+<span class="nc" id="L117">            System.out.println(&quot;2. Update the items in Menu&quot;);</span>
+<span class="nc" id="L118">            System.out.println(&quot;3. Delete the items in Menu&quot;);</span>
+<span class="nc" id="L119">            System.out.println(&quot;4. Purchase items&quot;);</span>
+<span class="nc" id="L120">            select = scan.nextInt();</span>
+<span class="nc bnc" id="L121" title="All 8 branches missed.">            if (select == 1||select == 2||select == 3||select == 4){</span>
+<span class="nc" id="L122">                result = true;</span>
+            }
+<span class="nc" id="L124">        }</span>
+<span class="nc" id="L125">        return select;</span>
+    }
+    public Item getNewItem(){
+<span class="nc" id="L128">        Scanner scan = new Scanner(System.in);</span>
+<span class="nc" id="L129">        System.out.print(&quot;Please enter your item's name: &quot;);</span>
+<span class="nc" id="L130">        String name =scan.nextLine();</span>
+<span class="nc" id="L131">        System.out.print(&quot;Please enter your item's price: &quot;);</span>
+<span class="nc" id="L132">        String enter_price = scan.nextLine();</span>
+<span class="nc" id="L133">        double price = Double.parseDouble(enter_price);</span>
+<span class="nc" id="L134">        System.out.print(&quot;Please enter your item's description: &quot;);</span>
+<span class="nc" id="L135">        String description =scan.nextLine();</span>
+<span class="nc" id="L136">        Item new_item = new NewItem(name,price,description);</span>
+<span class="nc" id="L137">        return new_item;</span>
+    }
+    public void purchase(ShoppingCart cart,Menu menu){
+<span class="nc" id="L140">        Scanner scan = new Scanner(System.in);</span>
+<span class="nc" id="L141">        System.out.print(&quot;Please enter the line number of the product you want to buy: &quot;);</span>
+<span class="nc" id="L142">        int line =scan.nextInt();</span>
+<span class="nc" id="L143">        System.out.print(&quot;Please enter the number of the product you want to buy: &quot;);</span>
+<span class="nc" id="L144">        int number =scan.nextInt();</span>
+<span class="nc" id="L145">        int length = menu.getItemList().size();</span>
+<span class="nc bnc" id="L146" title="All 2 branches missed.">        for (int i = 0; i &lt; length; i++) {</span>
+<span class="nc bnc" id="L147" title="All 2 branches missed.">            if(i + 1 == line){</span>
+<span class="nc" id="L148">                cart.add(menu.getItemList().get(i),number);</span>
+            }
+        }
+<span class="nc" id="L151">    }</span>
+    public int isPurchase(){
+<span class="nc" id="L153">        boolean result = false;</span>
+<span class="nc" id="L154">        int select = 0;</span>
+<span class="nc bnc" id="L155" title="All 2 branches missed.">        while(!result){</span>
+<span class="nc" id="L156">            Scanner scan = new Scanner(System.in);</span>
+<span class="nc" id="L157">            System.out.println(&quot;Do you want to continue buying?&quot;);</span>
+<span class="nc" id="L158">            System.out.println(&quot;1. Yes&quot;);</span>
+<span class="nc" id="L159">            System.out.println(&quot;2. No&quot;);</span>
+<span class="nc" id="L160">            select = scan.nextInt();</span>
+<span class="nc bnc" id="L161" title="All 4 branches missed.">            if (select == 1||select == 2){</span>
+<span class="nc" id="L162">                result = true;</span>
+            }
+<span class="nc" id="L164">        }</span>
+<span class="nc" id="L165">        return select;</span>
+    }
+
+    public int isDashboard(){
+<span class="nc" id="L169">        boolean result = false;</span>
+<span class="nc" id="L170">        int select = 0;</span>
+<span class="nc bnc" id="L171" title="All 2 branches missed.">        while(!result){</span>
+<span class="nc" id="L172">            Scanner scan = new Scanner(System.in);</span>
+<span class="nc" id="L173">            System.out.println(&quot;Do you want to continue operating?&quot;);</span>
+<span class="nc" id="L174">            System.out.println(&quot;1. Yes&quot;);</span>
+<span class="nc" id="L175">            System.out.println(&quot;2. No&quot;);</span>
+<span class="nc" id="L176">            select = scan.nextInt();</span>
+<span class="nc bnc" id="L177" title="All 4 branches missed.">            if (select == 1||select == 2){</span>
+<span class="nc" id="L178">                result = true;</span>
+            }
+<span class="nc" id="L180">        }</span>
+<span class="nc" id="L181">        return select;</span>
+    }
+
+    public int end(){
+<span class="nc" id="L185">        boolean result = false;</span>
+<span class="nc" id="L186">        int select = 0;</span>
+<span class="nc bnc" id="L187" title="All 2 branches missed.">        while(!result){</span>
+<span class="nc" id="L188">            Scanner scan = new Scanner(System.in);</span>
+<span class="nc" id="L189">            System.out.println(&quot;Please select the options below:&quot;);</span>
+<span class="nc" id="L190">            System.out.println(&quot;1. Check your all history Order&quot;);</span>
+<span class="nc" id="L191">            System.out.println(&quot;2. End&quot;);</span>
+<span class="nc" id="L192">            select = scan.nextInt();</span>
+<span class="nc bnc" id="L193" title="All 4 branches missed.">            if (select == 1||select == 2){</span>
+<span class="nc" id="L194">                result = true;</span>
+            }
+<span class="nc" id="L196">        }</span>
+<span class="nc" id="L197">        return select;</span>
+    }
+    public String ID(){
+<span class="nc" id="L200">        System.out.println(&quot;Please enter the ID of you want to check&quot;);</span>
+<span class="nc" id="L201">        Scanner scann = new Scanner(System.in);</span>
+<span class="nc" id="L202">        String id = scann.nextLine();</span>
+<span class="nc" id="L203">        return id;</span>
+    }
+    public int send(){
+<span class="nc" id="L206">        boolean result = false;</span>
+<span class="nc" id="L207">        int select = 0;</span>
+<span class="nc bnc" id="L208" title="All 2 branches missed.">        while(!result){</span>
+<span class="nc" id="L209">            Scanner scan = new Scanner(System.in);</span>
+<span class="nc" id="L210">            System.out.println(&quot;Please select the options below:&quot;);</span>
+<span class="nc" id="L211">            System.out.println(&quot;1. Pick it up at the store&quot;);</span>
+<span class="nc" id="L212">            System.out.println(&quot;2. Home delivery&quot;);</span>
+<span class="nc" id="L213">            select = scan.nextInt();</span>
+<span class="nc bnc" id="L214" title="All 4 branches missed.">            if (select == 1||select == 2){</span>
+<span class="nc" id="L215">                result = true;</span>
+            }
+<span class="nc" id="L217">        }</span>
+<span class="nc" id="L218">        return select;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

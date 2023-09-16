@@ -16,7 +16,7 @@ public class OrderList {
         this.people = people;
         this.order = order;
         this.fileName = people.getAccount()+".txt";
-        this.path = "Assignment1SOFT2412/app/src/main/resources" + "\\" + fileName;
+        this.path = "src/main/resources" + "\\" + fileName;
         readTxt();
         this.orderList.add(order);
         writeTxt();

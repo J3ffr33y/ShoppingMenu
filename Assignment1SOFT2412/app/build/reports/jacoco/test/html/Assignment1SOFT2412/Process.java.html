@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="zh"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Process.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">app</a> &gt; <a href="index.source.html" class="el_package">Assignment1SOFT2412</a> &gt; <span class="el_source">Process.java</span></div><h1>Process.java</h1><pre class="source lang-java linenums">package Assignment1SOFT2412;
+<span class="nc" id="L2">public class Process {</span>
+<span class="nc" id="L3">    private Menu menu = new Menu();</span>
+<span class="nc" id="L4">    private Ask ask = new Ask();</span>
+<span class="nc" id="L5">    private AdminDashboard adminDashboard = new AdminDashboard();</span>
+<span class="nc" id="L6">    private LoginSystem loginSystem = new LoginSystem();</span>
+<span class="nc" id="L7">    private ShoppingCart shoppingCart = new ShoppingCart();</span>
+    public void process(){
+<span class="nc" id="L9">        Admin current_admin = new Admin(&quot;current&quot;,&quot;current&quot;);</span>
+<span class="nc" id="L10">        User current_user = new User(&quot;User&quot;,&quot;123456&quot;);</span>
+<span class="nc" id="L11">        Order order = new Order(shoppingCart);</span>
+<span class="nc" id="L12">        OrderList orderList = new OrderList();</span>
+<span class="nc" id="L13">        boolean is_admin = false;</span>
+<span class="nc" id="L14">        boolean is_sign_in = false;</span>
+<span class="nc" id="L15">        boolean finish = false;</span>
+<span class="nc" id="L16">        int select = 0;</span>
+<span class="nc" id="L17">        int Control = 0;</span>
+<span class="nc bnc" id="L18" title="All 2 branches missed.">        while (!finish){</span>
+<span class="nc bnc" id="L19" title="All 2 branches missed.">            if(Control == 0){// Initial interface</span>
+<span class="nc" id="L20">                select = 0;</span>
+<span class="nc" id="L21">                current_admin = new Admin(&quot;current&quot;,&quot;current&quot;);</span>
+<span class="nc" id="L22">                select = ask.Initial_query();</span>
+<span class="nc" id="L23">                Control = 1;</span>
+            }
+<span class="nc bnc" id="L25" title="All 2 branches missed.">            if(Control == 1){</span>
+<span class="nc bnc" id="L26" title="All 2 branches missed.">                if(select == 1){</span>
+<span class="nc" id="L27">                    boolean success = ask.LogIn();</span>
+<span class="nc bnc" id="L28" title="All 2 branches missed.">                    if(success){</span>
+<span class="nc" id="L29">                        current_admin = ask.login_ID();</span>
+<span class="nc" id="L30">                        is_admin = true;</span>
+<span class="nc" id="L31">                        current_admin.creatOrderControl();</span>
+<span class="nc" id="L32">                        Control = Control+1;</span>
+                    }else{
+<span class="nc" id="L34">                        Control = 0;</span>
+                    }
+                }
+<span class="nc bnc" id="L37" title="All 2 branches missed.">                if(select == 2){</span>
+<span class="nc" id="L38">                    int id_select = ask.Registration1();</span>
+<span class="nc bnc" id="L39" title="All 2 branches missed.">                    if(id_select == 1){</span>
+<span class="nc" id="L40">                        current_admin = ask.Registration_Admin();</span>
+<span class="nc" id="L41">                        is_admin = true;</span>
+<span class="nc" id="L42">                        current_admin.creatOrderControl();</span>
+<span class="nc" id="L43">                        loginSystem.add(current_admin);</span>
+<span class="nc" id="L44">                        Control = Control + 2;</span>
+<span class="nc bnc" id="L45" title="All 2 branches missed.">                    } else if (id_select == 2) {</span>
+<span class="nc" id="L46">                        ask.Registration_User();</span>
+<span class="nc" id="L47">                        is_sign_in = true;</span>
+<span class="nc" id="L48">                        current_user.creatOrderControl();</span>
+<span class="nc" id="L49">                        Control = Control + 2;</span>
+                    } else{
+<span class="nc" id="L51">                        Control = 0;</span>
+                    }
+                }
+<span class="nc bnc" id="L54" title="All 2 branches missed.">                if (select == 3) {</span>
+<span class="nc" id="L55">                    Control = Control + 2;</span>
+                }
+            }
+<span class="nc bnc" id="L58" title="All 2 branches missed.">            if(Control == 2){ // Dashboard interface</span>
+<span class="nc" id="L59">                int menu_admin = ask.menuShow_or_dashboard();</span>
+<span class="nc bnc" id="L60" title="All 2 branches missed.">                if(menu_admin == 1){</span>
+<span class="nc" id="L61">                    int dash_select = ask.dashboard();</span>
+<span class="nc bnc" id="L62" title="All 2 branches missed.">                    if(dash_select == 1){</span>
+<span class="nc" id="L63">                        Item enter_item = ask.getNewItem();</span>
+<span class="nc" id="L64">                        adminDashboard.addItemToMenu(enter_item,menu);</span>
+<span class="nc" id="L65">                        Control = 6;</span>
+<span class="nc bnc" id="L66" title="All 2 branches missed.">                    } else if (dash_select == 2) {</span>
+<span class="nc" id="L67">                        Item enter_item = ask.getNewItem();</span>
+<span class="nc" id="L68">                        adminDashboard.updateItem(enter_item,menu);</span>
+<span class="nc" id="L69">                        Control = 6;</span>
+<span class="nc bnc" id="L70" title="All 2 branches missed.">                    } else if (dash_select == 3) {</span>
+<span class="nc" id="L71">                        Item enter_item = ask.getNewItem();</span>
+<span class="nc" id="L72">                        adminDashboard.deleteItem(enter_item,menu);</span>
+<span class="nc" id="L73">                        Control = 6;</span>
+<span class="nc bnc" id="L74" title="All 2 branches missed.">                    } else if (dash_select == 4) {</span>
+<span class="nc" id="L75">                        Control = 4;</span>
+                    }
+<span class="nc bnc" id="L77" title="All 2 branches missed.">                } else if (menu_admin == 2) {</span>
+<span class="nc" id="L78">                    Control = 3;</span>
+                } else{
+<span class="nc" id="L80">                    Control = 1;</span>
+                }
+            }
+<span class="nc bnc" id="L83" title="All 2 branches missed.">            if(Control == 3){// Menu show</span>
+<span class="nc" id="L84">                menu.show();</span>
+<span class="nc" id="L85">                Control = 4;</span>
+            }
+<span class="nc bnc" id="L87" title="All 2 branches missed.">            if(Control == 4){// buy items</span>
+<span class="nc" id="L88">                ask.purchase(shoppingCart,menu);</span>
+<span class="nc" id="L89">                Control = 5;</span>
+            }
+<span class="nc bnc" id="L91" title="All 2 branches missed.">            if(Control == 5){// Repeat purchase</span>
+<span class="nc" id="L92">                int isPurchase = ask.isPurchase();</span>
+<span class="nc bnc" id="L93" title="All 2 branches missed.">                if(isPurchase == 1){</span>
+<span class="nc" id="L94">                    Control = 4;</span>
+                }else{
+<span class="nc" id="L96">                    Control = 7;</span>
+                }
+            }
+<span class="nc bnc" id="L99" title="All 2 branches missed.">            if(Control == 6){//repeat dashboard</span>
+<span class="nc" id="L100">                int s = ask.isDashboard();</span>
+<span class="nc bnc" id="L101" title="All 2 branches missed.">                if(s == 1){</span>
+<span class="nc" id="L102">                    Control = 2;</span>
+                }else{
+                    break;
+                }
+            }
+<span class="nc bnc" id="L107" title="All 2 branches missed.">            if(Control == 7){</span>
+<span class="nc bnc" id="L108" title="All 2 branches missed.">                if(is_admin){</span>
+<span class="nc" id="L109">                    order = new Order(shoppingCart);</span>
+<span class="nc" id="L110">                    order.show();</span>
+<span class="nc" id="L111">                    orderList = new OrderList(current_admin,order);</span>
+<span class="nc" id="L112">                    Control = 8;</span>
+                }else{
+<span class="nc" id="L114">                    order = new Order(shoppingCart);</span>
+<span class="nc" id="L115">                    order.show();</span>
+<span class="nc bnc" id="L116" title="All 2 branches missed.">                    if(is_sign_in){</span>
+<span class="nc" id="L117">                        orderList = new OrderList(current_user,order);</span>
+<span class="nc" id="L118">                        Control = 8;</span>
+                    }else{
+<span class="nc" id="L120">                        ask.send();</span>
+<span class="nc" id="L121">                        break;</span>
+                    }
+                }
+            }
+<span class="nc bnc" id="L125" title="All 2 branches missed.">            if(Control == 8){</span>
+<span class="nc" id="L126">                int send = ask.send();</span>
+<span class="nc" id="L127">                Control = 9;</span>
+            }
+<span class="nc bnc" id="L129" title="All 2 branches missed.">            if(Control == 9){</span>
+<span class="nc" id="L130">                int end = ask.end();</span>
+<span class="nc bnc" id="L131" title="All 2 branches missed.">                if(end == 1){</span>
+<span class="nc" id="L132">                    String orderId = ask.ID();</span>
+<span class="nc" id="L133">                    orderList.checkOrder(orderId);</span>
+<span class="nc bnc" id="L134" title="All 2 branches missed.">                }else if(end == 2){</span>
+<span class="nc" id="L135">                    break;</span>
+                }
+<span class="nc" id="L137">            }</span>
+        }
+<span class="nc" id="L139">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

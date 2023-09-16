@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="zh"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Menu.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">app</a> &gt; <a href="index.source.html" class="el_package">Assignment1SOFT2412</a> &gt; <span class="el_source">Menu.java</span></div><h1>Menu.java</h1><pre class="source lang-java linenums">package Assignment1SOFT2412;
+
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Menu {
+
+<span class="nc" id="L9">    private List&lt;Item&gt; itemList = new ArrayList&lt;Item&gt;();</span>
+<span class="nc" id="L10">    private String path = &quot;src/main/resources/Menu.txt&quot;;</span>
+<span class="nc" id="L11">    public Menu(){</span>
+<span class="nc" id="L12">        readTxt();</span>
+<span class="nc" id="L13">    }</span>
+    public void readTxt(){
+        try {
+<span class="nc" id="L16">            File filename = new File(path);</span>
+<span class="nc" id="L17">            InputStreamReader reader = new InputStreamReader(</span>
+                    new FileInputStream(filename));
+<span class="nc" id="L19">            BufferedReader br = new BufferedReader(reader);</span>
+<span class="nc" id="L20">            String line = &quot;&quot;;</span>
+<span class="nc" id="L21">            line = br.readLine();</span>
+<span class="nc bnc" id="L22" title="All 2 branches missed.">            while (line != null) {</span>
+<span class="nc" id="L23">                line = br.readLine();</span>
+<span class="nc bnc" id="L24" title="All 2 branches missed.">                if(line==null){</span>
+<span class="nc" id="L25">                    break;</span>
+                }else{
+<span class="nc" id="L27">                    String[] txtRead = line.split(&quot;,&quot;);</span>
+<span class="nc" id="L28">                    Item item = new NewItem(txtRead[0],Double.parseDouble(txtRead[1]),txtRead[2]);</span>
+<span class="nc" id="L29">                    itemList.add(item);</span>
+<span class="nc" id="L30">                }</span>
+            }
+<span class="nc" id="L32">        } catch (Exception e) {</span>
+<span class="nc" id="L33">            e.printStackTrace();</span>
+<span class="nc" id="L34">        }</span>
+<span class="nc" id="L35">    }</span>
+    public void writeTxt(List&lt;Item&gt; iL){
+        try {
+<span class="nc" id="L38">            BufferedWriter out = new BufferedWriter(new FileWriter(path));</span>
+<span class="nc" id="L39">            String first_line = &quot;items name,price,description\n&quot;;</span>
+<span class="nc" id="L40">            out.write(first_line);</span>
+<span class="nc bnc" id="L41" title="All 2 branches missed.">            for(Item i:iL){</span>
+<span class="nc" id="L42">                String name = i.getName();</span>
+<span class="nc" id="L43">                double price = i.getPrice();</span>
+<span class="nc" id="L44">                String description = i.getDescription();</span>
+<span class="nc" id="L45">                String str = String.format(&quot;%s,%s,%s&quot;,name,price,description);</span>
+<span class="nc" id="L46">                str+=&quot;\r\n&quot;;</span>
+<span class="nc" id="L47">                out.write(str);</span>
+<span class="nc" id="L48">            }</span>
+<span class="nc" id="L49">            out.close();</span>
+<span class="nc" id="L50">        } catch (IOException e) {</span>
+<span class="nc" id="L51">            e.printStackTrace();</span>
+<span class="nc" id="L52">        }</span>
+<span class="nc" id="L53">    }</span>
+
+
+<span class="nc" id="L56">    public List&lt;Item&gt; getItemList(){return this.itemList;}</span>
+
+
+
+    public void show(){
+<span class="nc" id="L61">        int size = itemList.size();</span>
+<span class="nc bnc" id="L62" title="All 2 branches missed.">        for (int i = 0; i &lt; size; i++) {</span>
+<span class="nc" id="L63">            String item_name = itemList.get(i).getName();</span>
+<span class="nc" id="L64">            String item_description = itemList.get(i).getDescription();</span>
+<span class="nc" id="L65">            double item_price = itemList.get(i).getPrice();</span>
+<span class="nc bnc" id="L66" title="All 2 branches missed.">            if(i==0){</span>
+<span class="nc" id="L67">                String a = &quot;item names&quot;;</span>
+<span class="nc" id="L68">                String b = &quot;price&quot;;</span>
+<span class="nc" id="L69">                String c = &quot;description&quot;;</span>
+<span class="nc" id="L70">                String str = String.format(&quot;%12s | %5s | %15s&quot;,a,b,c);</span>
+<span class="nc" id="L71">                System.out.println(str);</span>
+<span class="nc" id="L72">                System.out.println(&quot;------------------------------------------&quot;);</span>
+            }
+<span class="nc" id="L74">            String str = String.format(i+1+&quot;.&quot;+&quot;%10s | %5s | %15s&quot;,item_name,item_price,item_description);</span>
+<span class="nc" id="L75">            System.out.println(str);</span>
+<span class="nc" id="L76">            System.out.println(&quot;-------------------------------------------&quot;);</span>
+        }
+
+<span class="nc" id="L79">    }</span>
+    public void add(Item item){
+<span class="nc" id="L81">        this.itemList.add(item);</span>
+<span class="nc" id="L82">        writeTxt(this.itemList);</span>
+<span class="nc" id="L83">    }</span>
+    public void update(Item item){
+<span class="nc bnc" id="L85" title="All 2 branches missed.">        for(Item i : itemList){</span>
+<span class="nc bnc" id="L86" title="All 2 branches missed.">            if(i.getName().equals(item.getName())){</span>
+<span class="nc" id="L87">                i.setPrice(item.getPrice());</span>
+<span class="nc" id="L88">                i.setDescription(item.getDescription());</span>
+            }
+<span class="nc" id="L90">        }</span>
+<span class="nc" id="L91">        writeTxt(this.itemList);</span>
+<span class="nc" id="L92">    }</span>
+    public void delete(Item item){
+<span class="nc bnc" id="L94" title="All 2 branches missed.">        for(Item i : itemList){</span>
+<span class="nc bnc" id="L95" title="All 2 branches missed.">            if(i.getName().equals(item.getName())){</span>
+<span class="nc" id="L96">                itemList.remove(i);</span>
+            }
+<span class="nc" id="L98">        }</span>
+<span class="nc" id="L99">        writeTxt(this.itemList);</span>
+<span class="nc" id="L100">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

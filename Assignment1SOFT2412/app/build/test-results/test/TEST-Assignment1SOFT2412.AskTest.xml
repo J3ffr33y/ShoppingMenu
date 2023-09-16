@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Assignment1SOFT2412.AskTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-09-16T05:52:07" hostname="manaoyuandeMBP.gateway" time="0.032">
+  <properties/>
+  <testcase name="testInitial_query()" classname="Assignment1SOFT2412.AskTest" time="0.032"/>
+  <system-out><![CDATA[1. Log in
+2. Registration 
+3. User login free
+1. Log in
+2. Registration 
+3. User login free
+1. Log in
+2. Registration 
+3. User login free
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

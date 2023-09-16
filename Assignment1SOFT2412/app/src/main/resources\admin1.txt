@@ -1,0 +1,4 @@
+Items name,Number,Price
+Order ID:d70b7b1e-50f9-4c1a-90ae-8333f3a3c5a2
+CocaCola,3,9.0
+Total price:9.0

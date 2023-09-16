@@ -6,7 +6,7 @@ import java.util.List;
 
 public class LoginSystem{
     private List<Admin> adminList = new ArrayList<Admin>(){};
-    private String path = "Assignment1SOFT2412/app/src/main/resources/AccountAndPassword.txt";
+    private String path = "src/main/resources/AccountAndPassword.txt";
     public LoginSystem(){
         readTxt();
     }
