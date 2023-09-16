@@ -3,6 +3,7 @@ public class Process {
     private Menu menu = new Menu();
     private Ask ask = new Ask();
     private AdminDashboard adminDashboard = new AdminDashboard();
+    private LoginSystem loginSystem = new LoginSystem();
     private ShoppingCart shoppingCart = new ShoppingCart();
     public void process(){
         Admin current_admin = new Admin("current","current");
@@ -39,6 +40,7 @@ public class Process {
                         current_admin = ask.Registration_Admin();
                         is_admin = true;
                         current_admin.creatOrderControl();
+                        loginSystem.add(current_admin);
                         Control = Control + 2;
                     } else if (id_select == 2) {
                         ask.Registration_User();
