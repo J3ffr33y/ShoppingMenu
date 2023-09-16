@@ -47,7 +47,7 @@ public class LoginSystem{
     public void writeTxt(List<Admin> iL){
         try {
             BufferedWriter out = new BufferedWriter(new FileWriter(path));
-            String first_line = "items name,price,description\n";
+            String first_line = "Account,Password\n";
             out.write(first_line);
             for(Admin i:iL){
                 String Account = i.getAccount();
