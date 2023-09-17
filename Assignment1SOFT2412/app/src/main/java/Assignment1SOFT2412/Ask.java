@@ -3,7 +3,7 @@ package Assignment1SOFT2412;
 import java.util.Scanner;
 
 public class Ask {
-    LoginSystem loginSystem = new LoginSystem();
+    public LoginSystem loginSystem = new LoginSystem();
     String Temporary_name = "";
     String Temporary_password = "";
 

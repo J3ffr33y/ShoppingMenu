@@ -70,7 +70,7 @@ public class OrderList {
                 List<OrderItem> orderItemList = i.getOrderItemList();
                 for(OrderItem o:orderItemList){
                     String item_name = o.getName();
-                    int item_number = o.getDescription();
+                    int item_number = o.getNumber();
                     double item_price = o.getPrice();
                     String str = String.format("%s,%s,%s",item_name,item_number,item_price);
                     str+="\r\n";

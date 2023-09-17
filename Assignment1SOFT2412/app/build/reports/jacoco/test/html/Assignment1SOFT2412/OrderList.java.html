@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="zh"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>OrderList.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">app</a> &gt; <a href="index.source.html" class="el_package">Assignment1SOFT2412</a> &gt; <span class="el_source">OrderList.java</span></div><h1>OrderList.java</h1><pre class="source lang-java linenums">package Assignment1SOFT2412;
+
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
+
+public class OrderList {
+
+    private People people;
+<span class="nc" id="L10">    private List&lt;Order&gt; orderList = new ArrayList&lt;&gt;();</span>
+    private Order order;
+    private String fileName;
+    private String path;
+
+<span class="nc" id="L15">    public OrderList(People people,Order order){</span>
+<span class="nc" id="L16">        this.people = people;</span>
+<span class="nc" id="L17">        this.order = order;</span>
+<span class="nc" id="L18">        this.fileName = people.getAccount()+&quot;.txt&quot;;</span>
+<span class="nc" id="L19">        this.path = &quot;src/main/resources&quot; + &quot;\\&quot; + fileName;</span>
+<span class="nc" id="L20">        readTxt();</span>
+<span class="nc" id="L21">        this.orderList.add(order);</span>
+<span class="nc" id="L22">        writeTxt();</span>
+<span class="nc" id="L23">    }</span>
+<span class="nc" id="L24">    public OrderList(){}</span>
+
+    public void readTxt(){
+        try {
+<span class="nc" id="L28">            File filename = new File(path);</span>
+<span class="nc" id="L29">            InputStreamReader reader = new InputStreamReader(</span>
+                    new FileInputStream(filename));
+<span class="nc" id="L31">            BufferedReader br = new BufferedReader(reader);</span>
+<span class="nc" id="L32">            String line = &quot;&quot;;</span>
+<span class="nc" id="L33">            line = br.readLine();</span>
+<span class="nc" id="L34">            String id = &quot;&quot;;</span>
+<span class="nc" id="L35">            List&lt;OrderItem&gt; orderItemList = new ArrayList&lt;OrderItem&gt;();</span>
+<span class="nc" id="L36">            double total_price = 0;</span>
+<span class="nc bnc" id="L37" title="All 2 branches missed.">            while (line != null) {</span>
+<span class="nc" id="L38">                line = br.readLine();</span>
+<span class="nc bnc" id="L39" title="All 2 branches missed.">                if(line==null){</span>
+<span class="nc" id="L40">                    break;</span>
+                }else{
+<span class="nc bnc" id="L42" title="All 2 branches missed.">                    if(line.contains(&quot;Order ID:&quot;)){</span>
+<span class="nc" id="L43">                        id = line.split(&quot;:&quot;)[1];</span>
+                    }
+<span class="nc bnc" id="L45" title="All 2 branches missed.">                    else if(line.contains(&quot;Total price:&quot;)){</span>
+<span class="nc" id="L46">                        total_price = Double.parseDouble(line.split(&quot;:&quot;)[1]);</span>
+<span class="nc" id="L47">                        Order order1 = new Order(id,orderItemList,total_price);</span>
+<span class="nc" id="L48">                        this.orderList.add(order1);</span>
+<span class="nc bnc" id="L49" title="All 2 branches missed.">                    } else if (line.contains(&quot;Items name,Number,Price&quot;)) {</span>
+<span class="nc" id="L50">                        orderItemList.clear();</span>
+                    } else {
+<span class="nc" id="L52">                        String[] t = line.split(&quot;,&quot;);</span>
+<span class="nc" id="L53">                        OrderItem orderItem = new OrderItem(t[0],Integer.parseInt(t[1]),Double.parseDouble(t[2]));</span>
+<span class="nc" id="L54">                        orderItemList.add(orderItem);</span>
+<span class="nc" id="L55">                    }</span>
+                }
+            }
+<span class="nc" id="L58">        } catch (Exception e) {</span>
+<span class="nc" id="L59">            e.printStackTrace();</span>
+<span class="nc" id="L60">        }</span>
+<span class="nc" id="L61">    }</span>
+    public void writeTxt(){
+        try {
+<span class="nc" id="L64">            BufferedWriter out = new BufferedWriter(new FileWriter(path));</span>
+<span class="nc bnc" id="L65" title="All 2 branches missed.">            for(Order i:orderList){</span>
+<span class="nc" id="L66">                String first_line =&quot;Order ID:&quot; + i.getId()+&quot;\n&quot;;</span>
+<span class="nc" id="L67">                String second_line = &quot;Items name,Number,Price\n&quot;;</span>
+<span class="nc" id="L68">                out.write(second_line);</span>
+<span class="nc" id="L69">                out.write(first_line);</span>
+<span class="nc" id="L70">                List&lt;OrderItem&gt; orderItemList = i.getOrderItemList();</span>
+<span class="nc bnc" id="L71" title="All 2 branches missed.">                for(OrderItem o:orderItemList){</span>
+<span class="nc" id="L72">                    String item_name = o.getName();</span>
+<span class="nc" id="L73">                    int item_number = o.getDescription();</span>
+<span class="nc" id="L74">                    double item_price = o.getPrice();</span>
+<span class="nc" id="L75">                    String str = String.format(&quot;%s,%s,%s&quot;,item_name,item_number,item_price);</span>
+<span class="nc" id="L76">                    str+=&quot;\r\n&quot;;</span>
+<span class="nc" id="L77">                    out.write(str);</span>
+<span class="nc" id="L78">                }</span>
+<span class="nc" id="L79">                String last_line = &quot;Total price:&quot; + i.getTotal_price() + &quot;\r\n&quot;;</span>
+<span class="nc" id="L80">                out.write(last_line);</span>
+<span class="nc" id="L81">            }</span>
+<span class="nc" id="L82">            out.close();</span>
+<span class="nc" id="L83">        } catch (IOException e) {</span>
+<span class="nc" id="L84">            e.printStackTrace();</span>
+<span class="nc" id="L85">        }</span>
+<span class="nc" id="L86">    }</span>
+    public void checkOrder(String checkID){
+<span class="nc" id="L88">        readTxt();</span>
+<span class="nc bnc" id="L89" title="All 2 branches missed.">        for(Order i:orderList){</span>
+<span class="nc" id="L90">            String orderID = i.getId();</span>
+<span class="nc bnc" id="L91" title="All 2 branches missed.">            if(checkID.equals(orderID)){</span>
+<span class="nc" id="L92">                i.show();</span>
+            }
+<span class="nc" id="L94">        }</span>
+<span class="nc" id="L95">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
