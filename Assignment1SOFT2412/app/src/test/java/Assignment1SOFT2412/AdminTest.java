@@ -33,7 +33,7 @@ public class AdminTest {
     @Test
     public void testCreatOrderControl(@TempDir Path tempDir) {
         // Use temporary directory for test
-        String originalPath = "Assignment1SOFT2412/app/src/main/resources";
+        String originalPath = "src/main/resources";
         String testPath = tempDir.toString();
 
         // Ensure temp directory is created

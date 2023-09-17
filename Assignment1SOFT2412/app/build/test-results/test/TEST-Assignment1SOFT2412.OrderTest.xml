@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Assignment1SOFT2412.OrderTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2023-09-17T12:08:46" hostname="manaoyuandeMBP.gateway" time="0.003">
+<testsuite name="Assignment1SOFT2412.OrderTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2023-09-17T12:37:39" hostname="manaoyuandeMBP.gateway" time="0.003">
   <properties/>
   <testcase name="getTotal_priceTest()" classname="Assignment1SOFT2412.OrderTest" time="0.0"/>
   <testcase name="getOrderItemListTest()" classname="Assignment1SOFT2412.OrderTest" time="0.001"/>

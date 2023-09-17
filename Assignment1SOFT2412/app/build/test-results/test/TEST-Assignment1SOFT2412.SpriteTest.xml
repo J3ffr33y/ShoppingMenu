@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Assignment1SOFT2412.SpriteTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-09-17T12:08:46" hostname="manaoyuandeMBP.gateway" time="0.002">
+<testsuite name="Assignment1SOFT2412.SpriteTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-09-17T12:37:39" hostname="manaoyuandeMBP.gateway" time="0.003">
   <properties/>
   <testcase name="testPrice()" classname="Assignment1SOFT2412.SpriteTest" time="0.001"/>
-  <testcase name="testName()" classname="Assignment1SOFT2412.SpriteTest" time="0.001"/>
-  <testcase name="testDescription()" classname="Assignment1SOFT2412.SpriteTest" time="0.0"/>
+  <testcase name="testName()" classname="Assignment1SOFT2412.SpriteTest" time="0.0"/>
+  <testcase name="testDescription()" classname="Assignment1SOFT2412.SpriteTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

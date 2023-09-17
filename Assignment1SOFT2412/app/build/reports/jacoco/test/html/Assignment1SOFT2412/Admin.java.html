@@ -26,13 +26,14 @@ public class Admin extends People{
     }
     public void creatOrderControl() {
 <span class="fc" id="L28">        String FileName = this.Account + &quot;.txt&quot;;</span>
-<span class="fc" id="L29">        String path = &quot;src/main/resources&quot; + &quot;\\&quot; + FileName;</span>
+<span class="fc" id="L29">        String path = &quot;src/main/resources/&quot;  + FileName;</span>
         try {
-<span class="fc" id="L31">            File file = new File(path);</span>
-<span class="fc" id="L32">            file.createNewFile();</span>
-<span class="nc" id="L33">        } catch (IOException e) {</span>
-<span class="nc" id="L34">            e.printStackTrace();</span>
-<span class="fc" id="L35">        }</span>
-<span class="fc" id="L36">    }</span>
+<span class="fc" id="L31">            System.out.println(path);</span>
+<span class="fc" id="L32">            File file = new File(path);</span>
+<span class="fc" id="L33">            file.createNewFile();</span>
+<span class="nc" id="L34">        } catch (IOException e) {</span>
+<span class="nc" id="L35">            e.printStackTrace();</span>
+<span class="fc" id="L36">        }</span>
+<span class="fc" id="L37">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

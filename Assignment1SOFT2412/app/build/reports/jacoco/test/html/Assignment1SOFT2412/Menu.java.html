@@ -58,25 +58,25 @@ public class Menu {
 
 
     public void show(){
-<span class="fc" id="L61">        int size = itemList.size();</span>
-<span class="fc bfc" id="L62" title="All 2 branches covered.">        for (int i = 0; i &lt; size; i++) {</span>
-<span class="fc" id="L63">            String item_name = itemList.get(i).getName();</span>
-<span class="fc" id="L64">            String item_description = itemList.get(i).getDescription();</span>
-<span class="fc" id="L65">            double item_price = itemList.get(i).getPrice();</span>
-<span class="fc bfc" id="L66" title="All 2 branches covered.">            if(i==0){</span>
-<span class="fc" id="L67">                String a = &quot;item names&quot;;</span>
-<span class="fc" id="L68">                String b = &quot;price&quot;;</span>
-<span class="fc" id="L69">                String c = &quot;description&quot;;</span>
-<span class="fc" id="L70">                String str = String.format(&quot;%12s | %5s | %15s&quot;,a,b,c);</span>
-<span class="fc" id="L71">                System.out.println(str);</span>
-<span class="fc" id="L72">                System.out.println(&quot;------------------------------------------&quot;);</span>
+<span class="nc" id="L61">        int size = itemList.size();</span>
+<span class="nc bnc" id="L62" title="All 2 branches missed.">        for (int i = 0; i &lt; size; i++) {</span>
+<span class="nc" id="L63">            String item_name = itemList.get(i).getName();</span>
+<span class="nc" id="L64">            String item_description = itemList.get(i).getDescription();</span>
+<span class="nc" id="L65">            double item_price = itemList.get(i).getPrice();</span>
+<span class="nc bnc" id="L66" title="All 2 branches missed.">            if(i==0){</span>
+<span class="nc" id="L67">                String a = &quot;item names&quot;;</span>
+<span class="nc" id="L68">                String b = &quot;price&quot;;</span>
+<span class="nc" id="L69">                String c = &quot;description&quot;;</span>
+<span class="nc" id="L70">                String str = String.format(&quot;%12s | %5s | %15s&quot;,a,b,c);</span>
+<span class="nc" id="L71">                System.out.println(str);</span>
+<span class="nc" id="L72">                System.out.println(&quot;------------------------------------------&quot;);</span>
             }
-<span class="fc" id="L74">            String str = String.format(i+1+&quot;.&quot;+&quot;%10s | %5s | %15s&quot;,item_name,item_price,item_description);</span>
-<span class="fc" id="L75">            System.out.println(str);</span>
-<span class="fc" id="L76">            System.out.println(&quot;-------------------------------------------&quot;);</span>
+<span class="nc" id="L74">            String str = String.format(i+1+&quot;.&quot;+&quot;%10s | %5s | %15s&quot;,item_name,item_price,item_description);</span>
+<span class="nc" id="L75">            System.out.println(str);</span>
+<span class="nc" id="L76">            System.out.println(&quot;-------------------------------------------&quot;);</span>
         }
 
-<span class="fc" id="L79">    }</span>
+<span class="nc" id="L79">    }</span>
     public void add(Item item){
 <span class="nc" id="L81">        this.itemList.add(item);</span>
 <span class="nc" id="L82">        writeTxt(this.itemList);</span>
@@ -93,7 +93,7 @@ public class Menu {
     public void delete(Item item){
 <span class="fc bfc" id="L94" title="All 2 branches covered.">        for(Item i : itemList){</span>
 <span class="pc bpc" id="L95" title="1 of 2 branches missed.">            if(i.getName().equals(item.getName())){</span>
-<span class="fc" id="L96">                itemList.remove(i);</span>
+<span class="nc" id="L96">                itemList.remove(i);</span>
             }
 <span class="fc" id="L98">        }</span>
 <span class="fc" id="L99">        writeTxt(this.itemList);</span>

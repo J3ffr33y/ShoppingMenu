@@ -1,8 +1,16 @@
 Items name,Number,Price
 Order ID:13095420-8c69-4921-92af-70da08cda478
-CocaCola,3,9.0
+Test Item 2,2,40.0
 Total price:9.0
 Items name,Number,Price
 Order ID:4e6608d7-19d3-4e0c-be25-b0e47bf8cc9f
-CocaCola,5,15.0
+Test Item 2,2,40.0
 Total price:15.0
+Items name,Number,Price
+Order ID:a817d7ce-198c-4937-87d2-7c32cb9a8e91
+Test Item 2,2,40.0
+Total price:40.0
+Items name,Number,Price
+Order ID:79e474f7-3fcd-437b-8e2a-6d54ea9c27d6
+Sprite,3,9.0
+Total price:9.0

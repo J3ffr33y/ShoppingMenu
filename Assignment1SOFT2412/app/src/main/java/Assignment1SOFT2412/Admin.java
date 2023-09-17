@@ -26,7 +26,7 @@ public class Admin extends People{
     }
     public void creatOrderControl() {
         String FileName = this.Account + ".txt";
-        String path = "src/main/resources" + "\\" + FileName;
+        String path = "src/main/resources/"  + FileName;
         try {
             File file = new File(path);
             file.createNewFile();

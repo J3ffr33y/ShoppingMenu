@@ -1,6 +1,7 @@
 package Assignment1SOFT2412;
 
 import java.io.*;
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,7 +17,7 @@ public class OrderList {
         this.people = people;
         this.order = order;
         this.fileName = people.getAccount()+".txt";
-        this.path = "src/main/resources" + "\\" + fileName;
+        this.path = "src/main/resources/"  + fileName;
         readTxt();
         this.orderList.add(order);
         writeTxt();
@@ -25,6 +26,7 @@ public class OrderList {
 
     public void readTxt(){
         try {
+
             File filename = new File(path);
             InputStreamReader reader = new InputStreamReader(
                     new FileInputStream(filename));
@@ -61,6 +63,7 @@ public class OrderList {
     }
     public void writeTxt(){
         try {
+
             BufferedWriter out = new BufferedWriter(new FileWriter(path));
             for(Order i:orderList){
                 String first_line ="Order ID:" + i.getId()+"\n";
