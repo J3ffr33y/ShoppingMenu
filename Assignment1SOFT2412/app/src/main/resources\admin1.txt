@@ -1,0 +1,8 @@
+Items name,Number,Price
+Order ID:08e868a4-7f69-4c96-bcf0-8e2b4dfab3f2
+Sprite,12,36.0
+Total price:36.0
+Items name,Number,Price
+Order ID:9f99a32e-cddb-404f-91b4-f48310481c13
+Sprite,2,6.0
+Total price:6.0

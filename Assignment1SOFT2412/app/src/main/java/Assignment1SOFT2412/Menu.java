@@ -7,7 +7,7 @@ import java.util.List;
 public class Menu {
 
     private List<Item> itemList = new ArrayList<Item>();
-    private String path = "Assignment1SOFT2412/app/src/main/resources/Menu.txt";
+    private String path = "src/main/resources/Menu.txt";
     public Menu(){
         readTxt();
     }

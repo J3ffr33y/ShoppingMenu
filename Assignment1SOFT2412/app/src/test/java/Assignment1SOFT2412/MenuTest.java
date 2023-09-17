@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class MenuTest {
 
     private Menu menu;
-    private String filePath = "Assignment1SOFT2412/app/src/main/resources/Menu.txt";
+    private String filePath = "src/main/resources/Menu.txt";
 
     public class TestItem extends Item {
         public TestItem(String name, double price, String description) {
