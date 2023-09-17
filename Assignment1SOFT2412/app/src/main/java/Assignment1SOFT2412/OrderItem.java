@@ -25,5 +25,4 @@ public class OrderItem {
     public String getName(){return name;}
     public int getNumber(){return number;}
     public double getPrice(){return price;}
-
 }

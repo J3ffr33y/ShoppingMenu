@@ -8,51 +8,51 @@ import java.util.UUID;
 public class Order {
     private String id;
     private double total_price;
-<span class="nc" id="L11">    private List&lt;OrderItem&gt; orderItemList = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L11">    private List&lt;OrderItem&gt; orderItemList = new ArrayList&lt;&gt;();</span>
 
 
 
 
-<span class="nc" id="L16">    public Order(ShoppingCart cart){</span>
-<span class="nc" id="L17">        SetID();</span>
-<span class="nc" id="L18">        this.orderItemList = cart.getOrderItemList();</span>
-<span class="nc" id="L19">    }</span>
-<span class="nc" id="L20">    public Order(String id ,List&lt;OrderItem&gt; orderItemList,double total_price){</span>
-<span class="nc" id="L21">        this.id = id;</span>
-<span class="nc" id="L22">        this.orderItemList = orderItemList;</span>
-<span class="nc" id="L23">        this.total_price = total_price;</span>
-<span class="nc" id="L24">    }</span>
+<span class="fc" id="L16">    public Order(ShoppingCart cart){</span>
+<span class="fc" id="L17">        SetID();</span>
+<span class="fc" id="L18">        this.orderItemList = cart.getOrderItemList();</span>
+<span class="fc" id="L19">    }</span>
+<span class="fc" id="L20">    public Order(String id ,List&lt;OrderItem&gt; orderItemList,double total_price){</span>
+<span class="fc" id="L21">        this.id = id;</span>
+<span class="fc" id="L22">        this.orderItemList = orderItemList;</span>
+<span class="fc" id="L23">        this.total_price = total_price;</span>
+<span class="fc" id="L24">    }</span>
 
     public void SetID(){
-<span class="nc" id="L27">        this.id = UUID.randomUUID().toString();</span>
-<span class="nc" id="L28">    }</span>
-<span class="nc" id="L29">    public String getId(){return this.id;}</span>
+<span class="fc" id="L27">        this.id = UUID.randomUUID().toString();</span>
+<span class="fc" id="L28">    }</span>
+<span class="fc" id="L29">    public String getId(){return this.id;}</span>
 
     public void show() {
-<span class="nc" id="L32">        int size = orderItemList.size();</span>
-<span class="nc" id="L33">        double totalPrice = 0;</span>
-<span class="nc bnc" id="L34" title="All 2 branches missed.">        for (int i = 0; i &lt; size; i++) {</span>
-<span class="nc" id="L35">            String item_name = orderItemList.get(i).getName();</span>
-<span class="nc" id="L36">            int item_number = orderItemList.get(i).getDescription();</span>
-<span class="nc" id="L37">            double item_price = orderItemList.get(i).getPrice();</span>
-<span class="nc bnc" id="L38" title="All 2 branches missed.">            if(i==0){</span>
-<span class="nc" id="L39">                System.out.println(&quot;Order ID:&quot;+this.id);</span>
-<span class="nc" id="L40">                String str = String.format(&quot;%12s | %5s | %5s&quot;,&quot;Item names&quot;,&quot;Number&quot;,&quot;Price&quot;);</span>
-<span class="nc" id="L41">                System.out.println(str);</span>
-<span class="nc" id="L42">                System.out.println(&quot;------------------------------------------&quot;);</span>
+<span class="fc" id="L32">        int size = orderItemList.size();</span>
+<span class="fc" id="L33">        double totalPrice = 0;</span>
+<span class="fc bfc" id="L34" title="All 2 branches covered.">        for (int i = 0; i &lt; size; i++) {</span>
+<span class="fc" id="L35">            String item_name = orderItemList.get(i).getName();</span>
+<span class="fc" id="L36">            int item_number = orderItemList.get(i).getNumber();</span>
+<span class="fc" id="L37">            double item_price = orderItemList.get(i).getPrice();</span>
+<span class="pc bpc" id="L38" title="1 of 2 branches missed.">            if(i==0){</span>
+<span class="fc" id="L39">                System.out.println(&quot;Order ID:&quot;+this.id);</span>
+<span class="fc" id="L40">                String str = String.format(&quot;%12s | %5s | %5s&quot;,&quot;Item names&quot;,&quot;Number&quot;,&quot;Price&quot;);</span>
+<span class="fc" id="L41">                System.out.println(str);</span>
+<span class="fc" id="L42">                System.out.println(&quot;------------------------------------------&quot;);</span>
             }
-<span class="nc" id="L44">            String str = String.format(i+1+&quot;.&quot;+&quot;%10s | %5s | %5s&quot;,item_name,item_number,item_price);</span>
-<span class="nc" id="L45">            System.out.println(str);</span>
-<span class="nc" id="L46">            System.out.println(&quot;-------------------------------------------&quot;);</span>
-<span class="nc" id="L47">            totalPrice += item_price;</span>
+<span class="fc" id="L44">            String str = String.format(i+1+&quot;.&quot;+&quot;%10s | %5s | %5s&quot;,item_name,item_number,item_price);</span>
+<span class="fc" id="L45">            System.out.println(str);</span>
+<span class="fc" id="L46">            System.out.println(&quot;-------------------------------------------&quot;);</span>
+<span class="fc" id="L47">            totalPrice += item_price;</span>
         }
-<span class="nc" id="L49">        this.total_price = totalPrice;</span>
-<span class="nc" id="L50">        String end = String.format(&quot;%15s&quot;,&quot;Total Price:&quot;+totalPrice);</span>
-<span class="nc" id="L51">        System.out.println(end);</span>
-<span class="nc" id="L52">    }</span>
-<span class="nc" id="L53">    public double getTotal_price(){return this.total_price;}</span>
+<span class="fc" id="L49">        this.total_price = totalPrice;</span>
+<span class="fc" id="L50">        String end = String.format(&quot;%15s&quot;,&quot;Total Price:&quot;+totalPrice);</span>
+<span class="fc" id="L51">        System.out.println(end);</span>
+<span class="fc" id="L52">    }</span>
+<span class="fc" id="L53">    public double getTotal_price(){return this.total_price;}</span>
     public List&lt;OrderItem&gt; getOrderItemList() {
-<span class="nc" id="L55">        return orderItemList;</span>
+<span class="fc" id="L55">        return orderItemList;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

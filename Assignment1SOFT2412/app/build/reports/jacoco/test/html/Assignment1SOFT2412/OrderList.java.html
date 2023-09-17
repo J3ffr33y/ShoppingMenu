@@ -16,7 +16,7 @@ public class OrderList {
 <span class="nc" id="L16">        this.people = people;</span>
 <span class="nc" id="L17">        this.order = order;</span>
 <span class="nc" id="L18">        this.fileName = people.getAccount()+&quot;.txt&quot;;</span>
-<span class="nc" id="L19">        this.path = &quot;src/main/resources&quot; + &quot;\\&quot; + fileName;</span>
+<span class="nc" id="L19">        this.path = &quot;Assignment1SOFT2412/app/src/main/resources&quot; + &quot;\\&quot; + fileName;</span>
 <span class="nc" id="L20">        readTxt();</span>
 <span class="nc" id="L21">        this.orderList.add(order);</span>
 <span class="nc" id="L22">        writeTxt();</span>
@@ -70,7 +70,7 @@ public class OrderList {
 <span class="nc" id="L70">                List&lt;OrderItem&gt; orderItemList = i.getOrderItemList();</span>
 <span class="nc bnc" id="L71" title="All 2 branches missed.">                for(OrderItem o:orderItemList){</span>
 <span class="nc" id="L72">                    String item_name = o.getName();</span>
-<span class="nc" id="L73">                    int item_number = o.getDescription();</span>
+<span class="nc" id="L73">                    int item_number = o.getNumber();</span>
 <span class="nc" id="L74">                    double item_price = o.getPrice();</span>
 <span class="nc" id="L75">                    String str = String.format(&quot;%s,%s,%s&quot;,item_name,item_number,item_price);</span>
 <span class="nc" id="L76">                    str+=&quot;\r\n&quot;;</span>

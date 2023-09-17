@@ -19,14 +19,14 @@ public class Admin extends People{
 <span class="nc" id="L19">        Password = password;</span>
 <span class="nc" id="L20">    }</span>
     public String getAccount(){
-<span class="nc" id="L22">        return this.Account;</span>
+<span class="fc" id="L22">        return this.Account;</span>
     }
     public String getPassword(){
-<span class="nc" id="L25">        return this.Password;</span>
+<span class="fc" id="L25">        return this.Password;</span>
     }
     public void creatOrderControl() {
 <span class="nc" id="L28">        String FileName = this.Account + &quot;.txt&quot;;</span>
-<span class="nc" id="L29">        String path = &quot;src/main/resources&quot; + &quot;\\&quot; + FileName;</span>
+<span class="nc" id="L29">        String path = &quot;Assignment1SOFT2412/app/src/main/resources&quot; + &quot;\\&quot; + FileName;</span>
         try {
 <span class="nc" id="L31">            File file = new File(path);</span>
 <span class="nc" id="L32">            file.createNewFile();</span>

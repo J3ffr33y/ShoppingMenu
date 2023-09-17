@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Assignment1SOFT2412.OrderTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2023-09-17T06:05:51" hostname="LAPTOP-N2FROFQE" time="0.035">
+  <properties/>
+  <testcase name="getTotal_priceTest()" classname="Assignment1SOFT2412.OrderTest" time="0.001"/>
+  <testcase name="getOrderItemListTest()" classname="Assignment1SOFT2412.OrderTest" time="0.0"/>
+  <testcase name="ShowTest()" classname="Assignment1SOFT2412.OrderTest" time="0.03"/>
+  <testcase name="setID()" classname="Assignment1SOFT2412.OrderTest" time="0.0"/>
+  <testcase name="getIdTest()" classname="Assignment1SOFT2412.OrderTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
