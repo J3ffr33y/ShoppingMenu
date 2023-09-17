@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class ItemTest {
 
-    // 测试用的子类，以便我们能够实例化Item
+
     class TestItem extends Item {}
 
     private TestItem item;
