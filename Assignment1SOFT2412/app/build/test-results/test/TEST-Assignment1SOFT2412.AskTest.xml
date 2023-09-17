@@ -1,16 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Assignment1SOFT2412.AskTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-09-16T05:52:07" hostname="manaoyuandeMBP.gateway" time="0.032">
+<testsuite name="Assignment1SOFT2412.AskTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2023-09-17T00:10:09" hostname="Yangs-MacBook-Pro.local" time="0.04">
   <properties/>
-  <testcase name="testInitial_query()" classname="Assignment1SOFT2412.AskTest" time="0.032"/>
-  <system-out><![CDATA[1. Log in
-2. Registration 
-3. User login free
-1. Log in
-2. Registration 
-3. User login free
-1. Log in
-2. Registration 
-3. User login free
+  <testcase name="getNewItem()" classname="Assignment1SOFT2412.AskTest" time="0.016"/>
+  <testcase name="testRegistration1()" classname="Assignment1SOFT2412.AskTest" time="0.005"/>
+  <testcase name="testLogIn()" classname="Assignment1SOFT2412.AskTest" time="0.002"/>
+  <testcase name="dashboard()" classname="Assignment1SOFT2412.AskTest" time="0.002"/>
+  <testcase name="testID()" classname="Assignment1SOFT2412.AskTest" time="0.001"/>
+  <testcase name="testRegistration_Admin()" classname="Assignment1SOFT2412.AskTest" time="0.001"/>
+  <testcase name="end()" classname="Assignment1SOFT2412.AskTest" time="0.001"/>
+  <testcase name="send()" classname="Assignment1SOFT2412.AskTest" time="0.001"/>
+  <testcase name="isDashboard()" classname="Assignment1SOFT2412.AskTest" time="0.001"/>
+  <testcase name="testRegistration_User()" classname="Assignment1SOFT2412.AskTest" time="0.001"/>
+  <testcase name="isPurchase()" classname="Assignment1SOFT2412.AskTest" time="0.001"/>
+  <testcase name="testMenuShow_or_dashboard()" classname="Assignment1SOFT2412.AskTest" time="0.001"/>
+  <testcase name="testInitial_query()" classname="Assignment1SOFT2412.AskTest" time="0.001"/>
+  <system-out><![CDATA[Please enter your item's name: Please enter your item's price: Please enter your item's description: Choose your identity: 
+1. Admin
+2. User
+3. return last step
+Please enter Account: Please enter Password: Please select the options below: 
+1. Add items to the Menu
+2. Update the items in Menu
+3. Delete the items in Menu
+4. Purchase items
+Please enter the ID of you want to check
+Create an Account: Create an Password: Please select the options below:
+1. Check your all history Order
+2. End
+Please select the options below:
+1. Pick it up at the store
+2. Home delivery
+Do you want to continue operating?
+1. Yes
+2. No
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

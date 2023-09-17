@@ -1,12 +1,22 @@
-
-1. Log in
-2. Registration 
-3. User login free
-
-1. Log in
-2. Registration 
-3. User login free
-
-1. Log in
-2. Registration 
-3. User login free
+ePlease enter your item's name: Please enter your item's price: Please enter your item's description: Choose your identity: 
+	1. Admin
+2. User
+3. return last step
+-Please enter Account: Please enter Password: "Please select the options below: 
+1. Add items to the Menu
+2. Update the items in Menu
+3. Delete the items in Menu
+4. Purchase items
+)Please enter the ID of you want to check
+'Create an Account: Create an Password: !Please select the options below:
+ 1. Check your all history Order
+2. End
+	!Please select the options below:
+	1. Pick it up at the store
+	2. Home delivery
+
+#Do you want to continue operating?
+
+1. Yes
+
+2. No
