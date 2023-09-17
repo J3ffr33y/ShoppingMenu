@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel>
-      <module name="Assignment1SOFT2412.app" target="17" />
-      <module name="Assignment1SOFT2412.app.main" target="17" />
-      <module name="Assignment1SOFT2412.app.test" target="17" />
-    </bytecodeTargetLevel>
+    <bytecodeTargetLevel target="17" />
   </component>
 </project>
