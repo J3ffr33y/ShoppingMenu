@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Assignment1SOFT2412.IceTeaTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-09-17T07:03:22" hostname="DESKTOP-AGORCED" time="0.024">
+  <properties/>
+  <testcase name="testPrice()" classname="Assignment1SOFT2412.IceTeaTest" time="0.006"/>
+  <testcase name="testName()" classname="Assignment1SOFT2412.IceTeaTest" time="0.01"/>
+  <testcase name="testDescription()" classname="Assignment1SOFT2412.IceTeaTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

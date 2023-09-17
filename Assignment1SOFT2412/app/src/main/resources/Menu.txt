@@ -1,4 +1,2 @@
 items name,price,description
-CocaCola,3.0,A classic soda
-IceTea,3.0,Tea-flavored beverage
-Sprite,3.0,Lemon soda
+Test Item 2,20.0,Test Description 2

@@ -6,18 +6,18 @@ import java.io.FileWriter;
 import java.sql.SQLOutput;
 import java.util.*;
 
-<span class="nc" id="L9">public class ShoppingCart {</span>
-<span class="nc" id="L10">    private List&lt;OrderItem&gt; orderItemList = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L9">public class ShoppingCart {</span>
+<span class="fc" id="L10">    private List&lt;OrderItem&gt; orderItemList = new ArrayList&lt;&gt;();</span>
 
 
     public void add(Item item, int number) {
-<span class="nc" id="L14">        String name = item.getName();</span>
-<span class="nc" id="L15">        double price = item.getPrice()*number;</span>
-<span class="nc" id="L16">        this.orderItemList.add(new OrderItem(name,number,price));</span>
-<span class="nc" id="L17">    }</span>
+<span class="fc" id="L14">        String name = item.getName();</span>
+<span class="fc" id="L15">        double price = item.getPrice()*number;</span>
+<span class="fc" id="L16">        this.orderItemList.add(new OrderItem(name,number,price));</span>
+<span class="fc" id="L17">    }</span>
 
     public List&lt;OrderItem&gt; getOrderItemList() {
-<span class="nc" id="L20">        return orderItemList;</span>
+<span class="fc" id="L20">        return orderItemList;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Assignment1SOFT2412.MenuTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2023-09-17T07:03:22" hostname="DESKTOP-AGORCED" time="0.055">
+  <properties/>
+  <testcase name="testShow()" classname="Assignment1SOFT2412.MenuTest" time="0.014"/>
+  <testcase name="testWriteTxt()" classname="Assignment1SOFT2412.MenuTest" time="0.009"/>
+  <testcase name="testReadTxt()" classname="Assignment1SOFT2412.MenuTest" time="0.013"/>
+  <testcase name="testDelete()" classname="Assignment1SOFT2412.MenuTest" time="0.008"/>
+  <testcase name="testUpdate()" classname="Assignment1SOFT2412.MenuTest" time="0.007"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Assignment1SOFT2412.AskTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2023-09-17T05:23:15" hostname="manaoyuandeMBP.gateway" time="0.093">
+<testsuite name="Assignment1SOFT2412.AskTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2023-09-17T07:03:21" hostname="DESKTOP-AGORCED" time="0.367">
   <properties/>
-  <testcase name="getNewItem()" classname="Assignment1SOFT2412.AskTest" time="0.035"/>
-  <testcase name="testRegistration1()" classname="Assignment1SOFT2412.AskTest" time="0.005"/>
-  <testcase name="testLogIn()" classname="Assignment1SOFT2412.AskTest" time="0.008"/>
-  <testcase name="dashboard()" classname="Assignment1SOFT2412.AskTest" time="0.004"/>
-  <testcase name="testID()" classname="Assignment1SOFT2412.AskTest" time="0.004"/>
-  <testcase name="testRegistration_Admin()" classname="Assignment1SOFT2412.AskTest" time="0.004"/>
-  <testcase name="end()" classname="Assignment1SOFT2412.AskTest" time="0.005"/>
-  <testcase name="send()" classname="Assignment1SOFT2412.AskTest" time="0.004"/>
-  <testcase name="isDashboard()" classname="Assignment1SOFT2412.AskTest" time="0.002"/>
-  <testcase name="testRegistration_User()" classname="Assignment1SOFT2412.AskTest" time="0.002"/>
-  <testcase name="isPurchase()" classname="Assignment1SOFT2412.AskTest" time="0.002"/>
-  <testcase name="testMenuShow_or_dashboard()" classname="Assignment1SOFT2412.AskTest" time="0.002"/>
-  <testcase name="testInitial_query()" classname="Assignment1SOFT2412.AskTest" time="0.003"/>
+  <testcase name="getNewItem()" classname="Assignment1SOFT2412.AskTest" time="0.056"/>
+  <testcase name="testRegistration1()" classname="Assignment1SOFT2412.AskTest" time="0.025"/>
+  <testcase name="testLogIn()" classname="Assignment1SOFT2412.AskTest" time="0.019"/>
+  <testcase name="dashboard()" classname="Assignment1SOFT2412.AskTest" time="0.036"/>
+  <testcase name="testID()" classname="Assignment1SOFT2412.AskTest" time="0.015"/>
+  <testcase name="testRegistration_Admin()" classname="Assignment1SOFT2412.AskTest" time="0.017"/>
+  <testcase name="end()" classname="Assignment1SOFT2412.AskTest" time="0.018"/>
+  <testcase name="send()" classname="Assignment1SOFT2412.AskTest" time="0.01"/>
+  <testcase name="isDashboard()" classname="Assignment1SOFT2412.AskTest" time="0.053"/>
+  <testcase name="testRegistration_User()" classname="Assignment1SOFT2412.AskTest" time="0.011"/>
+  <testcase name="isPurchase()" classname="Assignment1SOFT2412.AskTest" time="0.009"/>
+  <testcase name="testMenuShow_or_dashboard()" classname="Assignment1SOFT2412.AskTest" time="0.025"/>
+  <testcase name="testInitial_query()" classname="Assignment1SOFT2412.AskTest" time="0.034"/>
   <system-out><![CDATA[Please enter your item's name: Please enter your item's price: Please enter your item's description: Choose your identity: 
 1. Admin
 2. User
