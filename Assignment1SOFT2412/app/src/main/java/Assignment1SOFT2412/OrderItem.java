@@ -18,12 +18,12 @@ public class OrderItem {
     public void setPrice(double price) {
         this.price = price;
     }
-    public void setDescription(String description) {
+    public void setNumber(int number) {
         this.number = number;
     }
 
     public String getName(){return name;}
-    public int getDescription(){return number;}
+    public int getNumber(){return number;}
     public double getPrice(){return price;}
 
 }

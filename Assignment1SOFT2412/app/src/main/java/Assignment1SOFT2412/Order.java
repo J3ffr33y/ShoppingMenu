@@ -33,7 +33,7 @@ public class Order {
         double totalPrice = 0;
         for (int i = 0; i < size; i++) {
             String item_name = orderItemList.get(i).getName();
-            int item_number = orderItemList.get(i).getDescription();
+            int item_number = orderItemList.get(i).getNumber();
             double item_price = orderItemList.get(i).getPrice();
             if(i==0){
                 System.out.println("Order ID:"+this.id);
